@@ -1,0 +1,16 @@
+{
+  "name": "simple-authentication-example",
+  "version": "1.0.0",
+  "description": "simple plain user password authentication",
+  "main": "index.js",
+  "author": "Linh Ngo",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "nunjucks": "^3.0.0",
+    "pg-promise": "^5.6.7"
+  }
+}

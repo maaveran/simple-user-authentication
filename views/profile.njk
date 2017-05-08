@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple User Authentication - Profile Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="page-header text-center">
+            <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+            <a href="/" class="btn btn-default btn-sm">Logout</a>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                <h4>{{ status }}</h4>
+            </div>
+        </div>
+        <!-- LOCAL INFORMATION -->
+        <div class="row">
+            <h3><span class="glyphicon glyphicon-user"></span> Local</h3>
+            <p><strong>USERNAME:</strong> {{ username }}</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
