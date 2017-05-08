@@ -27,14 +27,14 @@ app.set('view engine', 'njk');
 require('./routes/routes')(app, express);
 
 // launch ======================================================================
-// const port = 3000;
-// app.listen(port, () => {
-//     console.log('Ready for GET requests on http://localhost:' + port);
-// });
-
-https.createServer({
-    key: fs.readFileSync('key.pem'),
-    cert: fs.readFileSync('cert.pem')
-}, app).listen(3000, () => {
-    console.log('Ready for GET requests on http://localhost:' + 3000);
+const port = 3000;
+app.listen(port, () => {
+    console.log('Ready for GET requests on http://localhost:' + port);
 });
+
+// https.createServer({
+//     key: fs.readFileSync('key.pem'),
+//     cert: fs.readFileSync('cert.pem')
+// }, app).listen(3000, () => {
+//     console.log('Ready for GET requests on http://localhost:' + 3000);
+// });
