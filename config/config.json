@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "abc",
-    "database": "test_product",
+    "database": "authenticate",
     "host"    : "localhost",
     "port"    : 5432,
     "dialect" : "postgres",

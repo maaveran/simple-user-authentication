@@ -19,7 +19,7 @@ module.exports = function (app, express) {
                     // this username does not yet exist
                     // hasing password by auto-generating a salt and hash
                     bcrypt.hash(req.body.password, 5, function (err, hash) {
-                        db.none("INSERT INTO user_account(username, pass) VALUES($1, $2)", [req.body.username, hash])
+                        db.none("INSERT INTO user_account (username, password) VALUES($1, $2)", [req.body.username, hash])
                             .then(() => {
                                 console.log('Insert account successfully');
                                 res.render('login', { status: 'Sign up successfully! You can log in now!' });
@@ -48,11 +48,12 @@ module.exports = function (app, express) {
                     console.log('Log in unsuccessfully. Account does not exist!!!');
                     res.render('login', { status: 'Log in unsuccessfully. Account does not exist!!!' });
                 } else {
+                    console.log(data);
                     // this account matches 
-                    bcrypt.compare(req.body.password, data.pass, function (err, hashRes) {
+                    bcrypt.compare(req.body.password, data.password, function (err, hashRes) {
                         if (hashRes) {
                             console.log('Log in successfully');
-                            res.render('profile', { status: 'You log in successfully!!!', username: req.body.username });
+                            res.render('profile', { status: 'You log in successfully!!!', username: req.body.username, password: data.password });
                         } else {
                             console.log('Log in unsuccessfully. Account does not match!!!');
                             res.render('login', { status: 'Log in unsuccessfully. Account does not match!!!' });
